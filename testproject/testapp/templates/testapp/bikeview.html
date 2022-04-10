@@ -1,0 +1,23 @@
+<center>
+    <p>Bike details</p>
+   
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>OWNER</th>
+            <th>BIKE</th>
+            <th>BIKE NUMBER</th>
+            <th>OPERATION</th>
+        </tr>
+        {% for bike in bikes %}
+
+        <tr>
+            <td>{{bike.id}}</td>
+            <td>{{bike.owner_name}}</td>
+            <td>{{bike.bike_name}}</td>
+            <td>{{bike.reg_number}}</td>
+            <td><a href="bikeupdate?q={{bike.id}}">Edit</a>||<a href="{% url 'bikedelete' bike.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
